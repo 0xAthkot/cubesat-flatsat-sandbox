@@ -20,13 +20,13 @@ Ground Station (RPi)  <-- 2.4 GHz NRF24L01+ -->  C&DH Node  <-- CAN Bus -->  EPS
 ```
 
 Ground Control & USB Debugging interface
+<br> ![Interface](img/interface_gnd_and_usb.png)
+
+Current Hardware Wiring Diagram
 <br> TODO: Add image
 
-Current Hardware Wiring Overview
-<br> TODO: Add image
-
-Demo Video
-<br> TODO: Add video
+Demo Image
+<br> ![Wiring](img/demo_full_wiring.png)
 
 ### Key Features
 * **Gateway Architecture:** The C&DH acts as the gateway between the ground station and the satellite bus, while the EPS responds to C&DH requests and reports telemetry (e.g., internal temperature).
