@@ -1,0 +1,39 @@
+{
+    "version": "2.0.0",
+    "options": {
+        "shell": {
+            "executable": "cmd.exe",
+            "args": ["/d", "/c"]
+        }
+    },
+    "tasks": [
+        {
+            "label": "Build CDH",
+            "type": "shell",
+            "command": "cmake -S . -B build/cdh -G Ninja -DCMAKE_TOOLCHAIN_FILE=cmake/gcc-arm-none-eabi.cmake -DNODE_TYPE=NODE_CDH && cmake --build build/cdh",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Build EPS",
+            "type": "shell",
+            "command": "cmake -S . -B build/eps -G Ninja -DCMAKE_TOOLCHAIN_FILE=cmake/gcc-arm-none-eabi.cmake -DNODE_TYPE=NODE_EPS && cmake --build build/eps",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Upload CDH",
+            "type": "shell",
+            "command": "cmake -S . -B build/cdh -G Ninja -DCMAKE_TOOLCHAIN_FILE=cmake/gcc-arm-none-eabi.cmake -DNODE_TYPE=NODE_CDH && cmake --build build/cdh && dfu-util -a 0 -s 0x08000000:leave -D build/cdh/cubesat-flatsat-sandbox.bin",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Upload EPS",
+            "type": "shell",
+            "command": "cmake -S . -B build/eps -G Ninja -DCMAKE_TOOLCHAIN_FILE=cmake/gcc-arm-none-eabi.cmake -DNODE_TYPE=NODE_EPS && cmake --build build/eps && dfu-util -a 0 -s 0x08000000:leave -D build/eps/cubesat-flatsat-sandbox.bin",
+            "group": "build",
+            "problemMatcher": []
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+build
+.claude
+.vscode
+.mxproject
+.clangd
+.settings
+mx.scratch
