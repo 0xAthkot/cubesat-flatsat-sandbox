@@ -19,14 +19,11 @@ Currently, this project implements a **very basic**, two-node flight computer sy
 Ground Station (RPi)  <-- 2.4 GHz NRF24L01+ -->  C&DH Node  <-- CAN Bus -->  EPS Node
 ```
 
-Ground Control & USB Debugging interface
-<br> ![Interface](img/interface_gnd_and_usb.png)
+### Ground Control & USB Debugging interface
+![Interface](img/interface_gnd_and_usb.png)
 
-Current Hardware Wiring Diagram
-<br> TODO: Add image
-
-Demo Image
-<br> ![Wiring](img/demo_full_wiring.png)
+### Current Hardware Wiring Diagram
+TODO: Add image
 
 ### Key Features
 * **Gateway Architecture:** The C&DH acts as the gateway between the ground station and the satellite bus, while the EPS responds to C&DH requests and reports telemetry (e.g., internal temperature).
@@ -86,6 +83,9 @@ python ground_station.py
 *Controls: `z` toggle EPS LED, `x` toggle C&DH LED, `q` quit.*
 
 ---
+
+### Demo Image
+![Wiring](img/demo_full_wiring.png)
 
 ## AI Disclosure
 (All code is manually reviewed before commiting to the codebase)
